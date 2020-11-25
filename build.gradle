@@ -1,34 +1,58 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: 'com.android.application'
 
-buildscript {
-    
-    repositories {
-        google()
-        jcenter()
-        
+android {
+    configurations.all {
+        resolutionStrategy.force 'com.android.support:support-annotations:26.1.0'
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.3'
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
 
-        classpath 'com.google.gms:google-services:4.2.0'
+    defaultConfig {
+        applicationId "com.hello.trafficdetection"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-}
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-
-allprojects {
-    repositories {
-        google()
-        jcenter()
-        maven {
-            url "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases"
+        aaptOptions {
+            noCompress "tflite"
         }
-        
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+    }
+    aaptOptions {
+        noCompress "tflite"
+        noCompress "lite"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.airbnb.android:lottie:3.4.2'
+
+    implementation('org.jitsi.react:jitsi-meet-sdk:2.9.0') { transitive = true }
+    implementation 'com.wonderkiln:camerakit:0.13.1'
+    implementation 'org.tensorflow:tensorflow-lite:+'
+    implementation 'com.google.android.gms:play-services-vision:15.0.2'
+
 }

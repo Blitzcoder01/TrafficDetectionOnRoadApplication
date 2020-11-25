@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2196F3"
+    tools:context=".Choose">
+
+    <ImageView
+        android:id="@+id/searchview"
+        android:layout_width="250dp"
+        android:layout_height="161dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/searchobject" />
+
+    <ImageView
+        android:id="@+id/nav_view"
+        android:layout_width="255dp"
+        android:layout_height="180dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="270dp"
+        app:srcCompat="@drawable/pin" />
+
+    <TextView
+        android:id="@+id/searchtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchview"
+        android:layout_centerHorizontal="true"
+        android:text="Search anything"
+        android:textColor="#FDF9F9"
+        android:textSize="24dp"
+        android:fontFamily="@font/baloo"/>
+    <TextView
+        android:id="@+id/navtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nav_view"
+        android:layout_centerHorizontal="true"
+        android:text="Road help"
+        android:textColor="#FDF9F9"
+        android:textSize="24dp"
+        android:fontFamily="@font/baloo"/>
+
+    <ImageView
+        android:id="@+id/menu"
+        android:layout_width="275dp"
+        android:layout_height="153dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="520dp"
+        app:srcCompat="@drawable/menu" />
+    <TextView
+        android:id="@+id/menutext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/menu"
+        android:layout_centerHorizontal="true"
+        android:text="Read Menu"
+        android:textColor="#FDF9F9"
+        android:textSize="24dp"
+        android:fontFamily="@font/baloo"/>
+
+</RelativeLayout>

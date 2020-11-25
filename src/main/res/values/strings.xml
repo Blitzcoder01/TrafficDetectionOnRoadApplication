@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TrafficDetection</string>
+
+
+    <string name="toggle_camera">Toggle Camera</string>
+    <string name="detect_object">Detect Object</string>
+
+
+    <string name="txt_message">No Text Available</string>
+    <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
+</resources>
